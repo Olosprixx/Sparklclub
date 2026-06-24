@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sparkl Club | Winx Фан-Комикс — Главная</title>
+  <title>Winx Фан-Комикс — Главная</title>
   <style>
     body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #ffe5ec 0%, #f0e6ff 100%); display: flex; min-height: 100vh; }
     .menu-toggle { display: none; position: fixed; top: 15px; left: 15px; background: #ff758f; color: white; border: none; border-radius: 8px; padding: 10px 15px; font-size: 20px; cursor: pointer; z-index: 1000; }
@@ -12,8 +12,7 @@
     .nav-link { display: block; padding: 15px 20px; background: #fff0f3; color: #ff477e; text-decoration: none; font-weight: bold; border-radius: 12px; transition: all 0.2s; }
     .nav-link:hover, .nav-link.active { background: #ff477e; color: white; transform: translateX(5px); }
     .main-content { flex-grow: 1; padding: 40px; display: flex; align-items: center; justify-content: center; }
-    .banner-box { max-width: 900px; width: 100%; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); background: white; }
-    .banner-box img { width: 100%; height: auto; display: block; }
+    .banner-box { max-width: 900px; width: 95%; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); background: white; margin: 0 auto; }
     
     max-width: 768px {
       .menu-toggle { display: block; }
@@ -26,7 +25,7 @@
 <body>
   <button class="menu-toggle" id="menuBtn">☰</button>
   <nav class="sidebar" id="sidebar">
-    <h2>КЛУБ СПАРКЛ</h2>
+    <h2>КЛУБ ВИНКС</h2>
     <a href="index.html" class="nav-link active">ГЛАВНАЯ</a>
     <a href="seasons.html" class="nav-link">СЕЗОНЫ</a>
     <a href="characters.html" class="nav-link">ПЕРСОНАЖИ</a>
@@ -34,16 +33,16 @@
   </nav>
   <main class="main-content">
     <div class="banner-box">
-      <img src="Баннер_Спаркл_Клуб.jpg">
+      <picture>
+        <source media="(max-width: 768px)" srcset="banner_mobile.jpg">
+        <img src="Баннер_Спаркл_Клуб.jpg" style="width:100%; display:block;">
+      </picture>
     </div>
   </main>
   <script>
     const menuBtn = document.getElementById('menuBtn');
     const sidebar = document.getElementById('sidebar');
     menuBtn.addEventListener('click', () => sidebar.classList.toggle('open'));
-    document.addEventListener('click', (e) => {
-      if (!sidebar.contains(e.target) && !menuBtn.contains(e.target)) sidebar.classList.remove('open');
-    });
   </script>
 </body>
 </html>
