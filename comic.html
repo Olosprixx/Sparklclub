@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Чтение комикса</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background: #1a1a1a; color: white; display: flex; min-height: 100vh; }
+    .menu-toggle { position: fixed; top: 15px; left: 15px; background: #ff758f; color: white; border: none; border-radius: 8px; padding: 10px 15px; font-size: 20px; cursor: pointer; z-index: 1000; opacity: 0.6; transition: opacity 0.3s; }
+    .menu-toggle:hover { opacity: 1; }
+    .sidebar { width: 280px; background: #ffffff; position: fixed; top: 0; left: 0; height: 100vh; z-index: 999; transform: translateX(-100%); transition: transform 0.3s ease; padding: 30px 20px; box-sizing: border-box; display: flex; flex-direction: column; gap: 15px; }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar a { color: #ff477e; text-decoration: none; font-weight: bold; padding: 10px; display: block; }
+    .comic-stream { flex-grow: 1; display: flex; flex-direction: column; align-items: center; padding-top: 70px; background: #111111; }
+    .comic-page { width: 100%; max-width: 800px; height: auto; display: block; }
+    .bottom-nav { padding: 40px; display: flex; gap: 20px; }
+    .btn { padding: 12px 25px; background: #ff758f; color: white; text-decoration: none; border-radius: 20px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <button class="menu-toggle" id="menuBtn">☰</button>
+  <nav class="sidebar" id="sidebar">
+    <a href="index.html">На главную</a>
+    <a href="seasons.html">К сезонам</a>
+    <a href="episodes.html">К сериям</a>
+  </nav>
+  <main class="comic-stream">
+    <img src="1_1серия1сезон.jpg" class="comic-page">
+    <img src="2_1сезон1серия.jpg" class="comic-page">
+    <img src="3_1сезон1серия.jpg" class="comic-page">
+    <img src="4_1сезон1серия.jpg" class="comic-page">
+    <img src="5_1сезон1серия.jpg" class="comic-page">
+    <img src="6_1сезон1серия.jpg" class="comic-page">
+    <img src="7_1сезон1серия.jpg" class="comic-page">
+    
+    <div class="bottom-nav">
+      <a href="episodes.html" class="btn">К списку серий</a>
+    </div>
+  </main>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const sidebar = document.getElementById('sidebar');
+    menuBtn.addEventListener('click', (e) => { e.stopPropagation(); sidebar.classList.toggle('open'); });
+    document.addEventListener('click', (e) => { if (!sidebar.contains(e.target)) sidebar.classList.remove('open'); });
+  </script>
+</body>
+</html>
