@@ -16,7 +16,17 @@
     
     max-width: 768px {
       .menu-toggle { display: block; }
-      .sidebar { position: fixed; top: 0; left: 0; height: 100vh; z-index: 999; transform: translateX(-100%); }
+      .sidebar { 
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        height: 100vh; 
+        z-index: 999; 
+        transform: translateX(-100%);
+        width: 100%;       
+        max-width: 100%;   
+        box-sizing: border-box;
+      }
       .sidebar.open { transform: translateX(0); }
       .main-content { padding: 80px 20px 20px 20px; }
     }
@@ -35,7 +45,7 @@
     <div class="banner-box">
       <picture>
         <source media="(max-width: 768px)" srcset="banner_mobile.jpg">
-        <img src="Баннер_Спаркл_Клуб.jpg" style="width:100%; display:block;">
+        <img src="Picsart_26-06-22_18-52-19-833.jpg" alt="Баннер" style="width:100%; display:block;">
       </picture>
     </div>
   </main>
